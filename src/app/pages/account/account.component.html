@@ -1,0 +1,44 @@
+<!-- user-profile.component.html -->
+<div class="user-profile">
+  <div class="profile-header">
+    <div class="profile-details">
+      <h2>¡Hola, {{user}} !</h2>
+      <p>Ponte al día con tu colección!!!</p>
+    </div>
+  </div>
+  <div class="profile-settings">
+    <h4>Configuraciones de Cuenta</h4>
+    <!-- Opciones de configuración más visualmente atractivas -->
+    <button class="settings-button">Cambiar Contraseña</button>
+    <button class="settings-button">Editar Perfil</button>
+  </div>
+  <div class="saved-content">
+    <h3>Películas Guardadas</h3>
+    <ul>
+      <li *ngFor="let item of savedMovie, let i = index" (click)="redireccionarSerie(item.id!, 'Movie')">
+        <img
+          [src]="image + item.poster_path"
+          alt="{{ item.title }}"
+          class="saved-content-image"
+        />
+        <span>{{ item.title }}</span>
+        <button class="delete" (click)="removeSavedItem(i, 'savedItems')">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="saved-content">
+    <h3>Series Guardadas</h3>
+    <ul>
+      <li *ngFor="let item of savedSerie, let i = index" (click)="redireccionarSerie(item.id!, 'Tv')">
+        <img
+          [src]="image + item.poster_path"
+          alt="{{ item.title }}"
+          class="saved-content-image"
+        />
+        <span>{{ item.title }}</span>
+        <button class="delete" (click)="removeSavedItem(i, 'savedSerie')">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+</div>

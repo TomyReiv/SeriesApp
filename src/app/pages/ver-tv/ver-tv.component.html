@@ -1,0 +1,49 @@
+<div class="serie-details" *ngFor="let serie of series">
+  <div class="content">
+    <div class="poster">
+      <img [src]="image + serie.poster_path" alt="Serie Poster" />
+    </div>
+    <div class="info">
+      <h1>{{ serie.name }}</h1>
+      <div class="genres">
+        <span *ngFor="let genre of serie.genres">{{ genre.name }} </span>
+        <i class="pi pi-star-fill" style="color: rgb(218, 188, 23)">
+          {{ serie.vote_average }}
+        </i>
+      </div>
+      <p class="overview">{{ serie.overview }}</p>
+      <span> {{ serie.number_of_seasons }} Temporadas </span>
+      <div class="buttons">
+        <button
+          *ngIf="save === false"
+          class="action-button"
+          (click)="guardarSerie(serie.poster_path!, serie.name!, serie.id!)"
+        >
+          Guardar
+        </button>
+        <!-- Cuando no esta guardado -->
+
+        <button class="action-button" *ngIf="save === true">
+          <i class="pi pi-check" style="color: rgb(253, 253, 253)"> </i>Guardar
+        </button>
+        <!-- Cuando esta guardado -->
+        <button class="action-button like-button" (click)="darLike()">
+          <i
+            class="pi pi-heart"
+            *ngIf="!like"
+            style="color: rgb(253, 253, 253)"
+          >
+            Like
+          </i>
+          <i
+            class="pi pi-heart-fill"
+            *ngIf="like"
+            style="color: rgb(253, 253, 253)"
+          >
+            Like
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

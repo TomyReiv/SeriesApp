@@ -1,0 +1,33 @@
+<div class="search-container">
+  <input
+    type="text"
+    [value]="searchQuery"
+    (input)="onSearchInputChange($event)"
+    placeholder="Buscar series..."
+  />
+  <div class="filter" *ngIf="filteredSeries">
+    <h4 *ngFor="let item of filteredSeries" (click)="redireccionarMovie(item.id!)">
+      <img [src]="image + item.poster_path" style="height: 3rem; width: 3rem;" alt="">
+      {{ item.title }} | {{ item.release_date }}
+    </h4>
+  </div>
+</div>
+
+<div class="conteiner__card">
+  <div
+    class="card flex justify-content-center"
+    *ngFor="let item of movies"
+    [style]="{ width: '360px' }"
+  >
+    <p-card (click)="redireccionarMovie(item.id!)" class="redirect">
+      <h3>{{ item.title }}</h3>
+      <img alt="item.name" [src]="image + item.poster_path" />
+      <h4>
+        {{ item.release_date }}
+        <i class="pi pi-star-fill" style="color: rgb(218, 188, 23)">
+          {{ item.vote_average }}
+        </i>
+      </h4>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="card">
+    <p-menubar [model]="items">
+        <ng-template pTemplate="end">
+            <i class="pi pi-power-off" style="font-size: 1.5rem" style="color: red; cursor: pointer;" (click)="logOut()"></i>
+            <a routerLink="/pages/Login">Login</a>
+            <a routerLink="/pages/Register">Registrarse</a>
+        </ng-template>
+    </p-menubar>
+</div>
+

@@ -1,0 +1,86 @@
+.conteiner__card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+}
+.card{
+    min-height: 25rem;
+    margin-top: 1rem;
+}
+img{
+    width: 100%;
+    max-height: 20rem;
+    margin: auto;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.search-container input{
+    padding: 1.5rem;
+    width: 80%;
+    height: 2rem;
+    margin: auto;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+h4{
+    border-bottom: 1px dotted #fffefe;
+    cursor: pointer;
+}
+
+.filter{
+    padding: 1rem;
+}
+.redirect{
+    cursor: pointer;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .conteiner__card {
+      grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+  
+    .card {
+      min-height: auto; /* Elimina la altura mínima */
+    }
+  
+    img {
+      max-height: 15rem; /* Reduce la altura máxima de la imagen */
+    }
+  
+    .search-container input {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  }
+  
+  /* Estilos para tabletas */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .conteiner__card {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+  
+    img {
+      max-height: 20rem; /* Ajusta la altura máxima de la imagen */
+    }
+  
+    .search-container input {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  }
+  
+  /* Estilos para pantallas más grandes (computadoras de escritorio) */
+  @media (min-width: 1025px) {
+    /* No se necesitan cambios adicionales en este punto */
+  }
+  

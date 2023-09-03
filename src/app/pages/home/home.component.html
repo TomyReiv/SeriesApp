@@ -1,0 +1,121 @@
+<div class="container__grid">
+  <div class="container__col">
+    <h3>Características Destacadas:</h3>
+    <ul>
+      <li>
+        <strong>Tu Propia Biblioteca Personal:</strong> Crea tu colección de
+        películas y series recomendadas. ¡Nunca más perderás de vista una
+        recomendación valiosa!
+      </li>
+      <li>
+        <strong>Recuerda con Detalles:</strong>
+        Agrega notas y etiquetas a cada recomendación para recordar por qué te
+        llamó la atención en primer lugar.
+      </li>
+      <li>
+        <strong>Explora Nuevas Opciones: </strong>
+        ¿Listo para una nueva película o serie? Explora tus recomendaciones
+        guardadas y elige la próxima aventura sin esfuerzo.
+      </li>
+      <li>
+        <strong>Fomenta las Conversaciones: </strong>
+        Comparte tus impresiones y opiniones sobre cada recomendación con otros
+        usuarios. ¡Las discusiones cinéfilas nunca han sido tan fáciles!
+      </li>
+    </ul>
+  </div>
+
+  <div class="container__col__primary">
+    <div class="container__global text">
+      <h3>
+        Bienvenido a [Nombre de tu App] - Tu Rincón de Recomendaciones
+        Cinematográficas
+      </h3>
+      <p>
+        ¿Cuántas veces has tenido una conversación apasionante sobre una
+        película o serie increíblemente recomendada, solo para olvidar su nombre
+        más tarde? ¡No te preocupes más! [Nombre de tu App] está aquí para
+        guardar todas esas valiosas sugerencias y asegurarse de que no se te
+        escape ni una sola recomendación.
+      </p>
+    </div>
+
+    <div class="container__global text">
+      <h3>
+        No Dejes que las Gemas del Entretenimiento se Pierdan en el Olvido
+      </h3>
+      <p>
+        En [Nombre de tu App], entendemos la emoción de descubrir algo nuevo y
+        emocionante para ver. Nuestra misión es asegurarnos de que cada
+        recomendación que recibas, ya sea de amigos, familiares o incluso en
+        conversaciones en línea, se convierta en una experiencia real de
+        visualización. ¿Cómo lo hacemos? Al proporcionarte una plataforma
+        sencilla y poderosa para guardar, explorar y disfrutar de todas esas
+        joyas audiovisuales que te han entusiasmado.
+      </p>
+    </div>
+
+    <div class="container__global">
+      <h2>Películas mas populares</h2>
+      <p-galleria
+        class="container"
+        [value]="images"
+        [autoPlay]="true"
+        [showIndicators]="true"
+        [showThumbnails]="false"
+        [changeItemOnIndicatorHover]="true"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template pTemplate="item" let-item>
+          <img
+            (click)="redireccionar(item.id!, 'Movie')"
+            class="img__big"
+            [src]="imageUrl + item.poster_path"
+            style="display: block; cursor: pointer;"
+          />
+        </ng-template>
+      </p-galleria>
+    </div>
+
+
+    <div style="width: 50%; margin: auto">
+      <p-divider align="center">
+        <div class="inline-flex align-items-center">
+          <b>Series</b>
+        </div>
+      </p-divider>
+    </div>
+
+    <div class="container__global">
+      <h2>Series de tv mas populares</h2>
+      <p-galleria
+        class="container"
+        [value]="imagesTv"
+        [autoPlay]="true"
+        [showIndicators]="true"
+        [showThumbnails]="false"
+        [changeItemOnIndicatorHover]="true"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template pTemplate="item" let-item>
+          <img
+          (click)="redireccionar(item.id!, 'Tv')"
+            class="img__big"
+            [src]="imageUrl + item.poster_path"
+            style="display: block; cursor: pointer;"
+          />
+        </ng-template>
+      </p-galleria>
+    </div>
+  </div>
+
+  <div class="container__col proxima">
+    <h3>Proximas películas</h3>
+    <div *ngFor="let item of imagesUpcoming">
+        <div class="container__card" (click)="redireccionar(item.id!, 'Movie')">
+            <img [src]="imageUrl + item.poster_path" alt="item.title">
+            <span> {{item.title}} </span>
+        </div>
+    </div>
+  </div>
+</div>

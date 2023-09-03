@@ -1,0 +1,109 @@
+.container__grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.container__col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li{
+    margin: 1rem;
+}
+strong, h3, h2{
+    color: white;
+}
+
+.container__card{
+    min-width: 20rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px wheat solid;
+    align-items: center;
+    margin: 1rem;
+    justify-content: center;
+    cursor: pointer;
+}
+span{
+    margin: auto;
+    font-size: 1rem;
+    text-align: center;
+}
+.container__card img{
+    width: 5rem;
+    height: 5rem;
+}
+.container__global{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.img__big{
+    margin-top: 0.5rem;
+    width: 30rem;
+    height: 30rem;
+}
+
+/* Estilos para tamaños de pantalla más pequeños (por ejemplo, dispositivos móviles) */
+@media (max-width: 768px) {
+    .container__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .container__col {
+      align-items: flex-start; /* Cambia la alineación de los elementos del centro a la parte superior */
+    }
+  
+    .container__card {
+      min-width: auto; /* Elimina el ancho mínimo */
+      grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+  
+    .container__card img {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      height: auto; /* Ajusta la altura automáticamente */
+    }
+    .proxima{
+      display: none;
+  }
+  }
+  
+  /* Estilos para tamaños de pantalla medianos (por ejemplo, tabletas) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container__grid {
+      grid-template-columns: 1fr 1fr; /* Dos columnas en tabletas */
+    }
+    
+    .container__col {
+      align-items: center; /* Vuelve a centrar la alineación */
+    }
+    
+    .container__card {
+      min-width: 20rem; /* Restaura el ancho mínimo */
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container__card img {
+      width: 5rem;
+      height: 5rem;
+    }
+    .proxima{
+        display: none;
+    }
+  }
+  
+
+  @media (min-width: 1025px) {
+
+  }
+  
