@@ -32,6 +32,9 @@
           }}</span> -->
           <br />
           <a routerLink="/pages/Register">Registrarse</a>
+          <span class="error" *ngIf="error">
+            {{mensaje}}
+          </span>
         </div>
         <button type="submit" class="login-button">Ingresar</button>
       </form>
