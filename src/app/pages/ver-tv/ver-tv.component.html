@@ -13,6 +13,9 @@
       </div>
       <p class="overview">{{ serie.overview }}</p>
       <span> {{ serie.number_of_seasons }} Temporadas </span>
+      <br>
+      <br>
+      <span *ngFor="let production_companies of serie.production_companies">{{ production_companies.name }} | </span>
       <div class="buttons">
         <button
           *ngIf="save === false"

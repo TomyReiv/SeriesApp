@@ -14,12 +14,11 @@ export class VerTvComponent implements OnInit {
   public series: SerieID[] = []
   public serie!: SerieID;
   public image: string = enviroment.imageUrl;
-  public like: boolean = false;
+  public like: any = false;
   public serieId!: number;
   public save: boolean = false;
   public serieName: string = '';
   public localStorageData: any[] = JSON.parse(localStorage.getItem('savedSerie') || '[]');
-
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
@@ -59,6 +58,6 @@ export class VerTvComponent implements OnInit {
     this.save = true;
   }
 
-  darLike() { }
+  darLike() {}
 
 }

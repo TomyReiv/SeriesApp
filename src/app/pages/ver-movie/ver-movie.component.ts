@@ -13,7 +13,7 @@ export class VerMovieComponent {
   public movies: MovieID[] = []
   public movie!: MovieID;
   public image: string = enviroment.imageUrl;
-  public like: boolean = false;
+  public like: any = false;
   public movieId!: number;
   public save: boolean = false;
   public movieName: string = '';
@@ -23,6 +23,7 @@ export class VerMovieComponent {
   ngOnInit() {
 
     const titles = this.localStorageData.map(item => item.title);
+    this.like = localStorage.getItem('like') || false;
 
     this.route.params.subscribe(params => {
       this.movieId = params['id'];
@@ -57,5 +58,7 @@ guardarMovie(poster_path: string, title: string, id:any){
   this.save = true;
  }
 
-darLike(){ }
+ darLike() { 
+}
+
 }
