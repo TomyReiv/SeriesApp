@@ -12,13 +12,6 @@
   margin-bottom: 20px;
 }
 
-.profile-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
 .profile-details {
   color: #333;
 }
@@ -75,4 +68,39 @@ h3{
   border-radius: 5px;
   margin: 1rem;
   cursor: pointer;
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .user-profile{
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 769px){
+  ul{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  .user-profile{
+    width: 100%;
+    margin: auto;
+  }
+  .profile-header{
+    width: 80%;
+  }
+  .saved-content{
+    width: 80%;
+  }
+  .profile-settings{
+    width: 80%;
+  }
+  .profile-details{
+    width: 80%;
+  }
 }

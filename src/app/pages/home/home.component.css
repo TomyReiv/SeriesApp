@@ -79,9 +79,10 @@ span{
   }
   
   /* Estilos para tamaños de pantalla medianos (por ejemplo, tabletas) */
-  @media (min-width: 769px) and (max-width: 1024px) {
+  @media (min-width: 580px) and (max-width: 1024px) {
     .container__grid {
       grid-template-columns: 1fr 1fr; /* Dos columnas en tabletas */
+      width: 90%;
     }
     
     .container__col {
@@ -99,6 +100,9 @@ span{
     }
     .proxima{
         display: none;
+    }
+    .container__global{
+      width: 90%;
     }
   }
   
