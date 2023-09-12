@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject } from '@angular/core';
+import { Component, HostListener, computed, effect, inject } from '@angular/core';
 import { UserService } from './services/user.service';
 import { AuthStatus } from './interfaces/auth-status.enum';
 import { Router } from '@angular/router';
@@ -35,4 +35,5 @@ export class AppComponent {
         return;
     }
   });
+
 }

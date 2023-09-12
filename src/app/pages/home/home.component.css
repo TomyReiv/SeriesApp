@@ -58,10 +58,24 @@ span{
 @media (max-width: 768px) {
     .container__grid {
       grid-template-columns: 1fr;
+       width: 90%;
     }
   
     .container__col {
       align-items: flex-start; /* Cambia la alineación de los elementos del centro a la parte superior */
+       width: 90%;
+       margin: auto;
+    }
+    li{
+      margin-left: 0%;
+    }
+    .text{
+      width: 90%;
+      margin: auto;
+    }
+    .img__big{
+      width: 100%;
+      margin: auto;
     }
   
     .container__card {
@@ -79,7 +93,7 @@ span{
   }
   
   /* Estilos para tamaños de pantalla medianos (por ejemplo, tabletas) */
-  @media (min-width: 580px) and (max-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     .container__grid {
       grid-template-columns: 1fr 1fr; /* Dos columnas en tabletas */
       width: 90%;
@@ -87,6 +101,7 @@ span{
     
     .container__col {
       align-items: center; /* Vuelve a centrar la alineación */
+      width: 90%;
     }
     
     .container__card {
