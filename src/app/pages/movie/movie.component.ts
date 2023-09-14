@@ -9,17 +9,17 @@ import { enviroment } from 'src/environments/enviroment';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit{
+export class MovieComponent implements OnInit {
   public movies: Result[] = []
   public image: string = enviroment.imageUrl;
-
+  public no_image: string = '../../../assets/no_image.png'
 
   searchQuery: string = '';
   filteredSeries: Result[] = [];
   selectedSeries: Result | null = null;
 
 
-  constructor(private apiService: ApiService, private router:Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
   ngOnInit() {
     this.apiService.searchPopularMovie().subscribe((resp) => {
       this.movies = resp.results!;
@@ -34,6 +34,6 @@ export class MovieComponent implements OnInit{
   }
 
   redireccionarMovie(id: number) {
-    this.router.navigate(['/pages/Movie/', id]); 
+    this.router.navigate(['/pages/Movie/', id]);
   }
 }

@@ -15,6 +15,7 @@ export class LoginComponent {
   enviado: boolean = false;
   error: boolean = false;
   mensaje: string = '';
+  public charge: boolean = false
 
   private router = inject(Router) 
 
@@ -33,15 +34,18 @@ export class LoginComponent {
 
 
   login() {
+    this.charge = true;
     const { email, password } = this.myForm.value;
 
     this.userService.login(email, password)
       .subscribe({
         next: () => {
+          this.charge = false;
           this.router.navigate(['/pages/Account']);
           localStorage.setItem('user', email);
         },
          error: (message) => {
+          this.charge = false;
           this.error = true
           this.mensaje = message
         }

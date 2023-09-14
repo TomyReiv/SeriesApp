@@ -10,7 +10,7 @@
       *ngFor="let item of filteredSeries"
       (click)="redireccionarSerie(item.id!)"
     >
-    <img [src]="image + item.poster_path" style="height: 3rem; width: 3rem;" alt="">
+    <img [src]="image + item.poster_path || no_image" style="height: 3rem; width: 3rem;" alt="">
       {{ item.name }} | {{ item.first_air_date }}
     </h4>
   </div>
@@ -24,7 +24,7 @@
   >
     <p-card (click)="redireccionarSerie(item.id!)" class="redirect">
       <h3>{{ item.name }}</h3>
-      <img alt="Card" [src]="image + item.poster_path" />
+      <img alt="Card" [src]="image + item.poster_path || no_image" />
       <h4>
         {{ item.first_air_date }}
         <i class="pi pi-star-fill" style="color: rgb(218, 188, 23)">

@@ -16,6 +16,7 @@ import { enviroment } from 'src/environments/enviroment';
 export class SeriesComponent implements OnInit {
   public series: ResultTv[] = []
   public image: string = enviroment.imageUrl;
+  public no_image: string = '../../../assets/no_image.png'
 
   searchQuery: string = '';
   filteredSeries: ResultTv[] = [];

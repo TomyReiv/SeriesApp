@@ -12,7 +12,7 @@
     <ul>
       <li *ngFor="let item of savedMovie, let i = index" (click)="redireccionarSerie(item.id!, 'Movie')">
         <img
-          [src]="image + item.poster_path"
+          [src]="image + item.poster_path || no_image"
           alt="{{ item.title }}"
           class="saved-content-image"
         />
@@ -27,7 +27,7 @@
     <ul>
       <li *ngFor="let item of savedSerie, let i = index" (click)="redireccionarSerie(item.id!, 'Tv')">
         <img
-          [src]="image + item.poster_path"
+          [src]="image + item.poster_path || no_image"
           alt="{{ item.title }}"
           class="saved-content-image"
         />

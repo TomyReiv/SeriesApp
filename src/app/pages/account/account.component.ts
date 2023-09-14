@@ -11,9 +11,9 @@ export class AccountComponent {
   public savedSerie: any[] = [];
   public savedMovie: any[] = [];
   public image: string = enviroment.imageUrl;
-
+  public no_image: string = '../../../assets/no_image.png'
   public user: string = '';
-
+  
   private router = inject(Router);
 
 

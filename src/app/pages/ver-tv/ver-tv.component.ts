@@ -19,6 +19,7 @@ export class VerTvComponent implements OnInit {
   public save: boolean = false;
   public serieName: string = '';
   public localStorageData: any[] = JSON.parse(localStorage.getItem('savedSerie') || '[]');
+  public no_image: string = '../../../assets/no_image.png'
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 

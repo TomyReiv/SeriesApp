@@ -13,10 +13,11 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
-  public imageUrl: string = enviroment.imageUrl
-  public images: Result[] = []
-  public imagesUpcoming: Result[] = []
-  public imagesTv: ResultTv[] = []
+  public imageUrl: string = enviroment.imageUrl;
+  public images: Result[] = [];
+  public imagesUpcoming: Result[] = [];
+  public imagesTv: ResultTv[] = [];
+  public no_image: string = '../../../assets/no_image.png'
 
   constructor(private apiService: ApiService, private router: Router){}
   

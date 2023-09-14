@@ -1,7 +1,7 @@
 <div class="serie-details" *ngFor="let serie of series">
   <div class="content">
     <div class="poster">
-      <img [src]="image + serie.poster_path" alt="Serie Poster" />
+      <img [src]="image + serie.poster_path || no_image" alt="Serie Poster" />
     </div>
     <div class="info">
       <h1>{{ serie.name }}</h1>
