@@ -2,22 +2,34 @@
 <div class="user-profile">
   <div class="profile-header">
     <div class="profile-details">
-      <h2>¡Hola, {{user}} !</h2>
+      <h2>¡Hola, {{ user }} !</h2>
       <p>Ponte al día con tu colección!!!</p>
     </div>
   </div>
- 
+
   <div class="saved-content">
     <h3>Películas Guardadas</h3>
     <ul>
-      <li *ngFor="let item of savedMovie, let i = index" (click)="redireccionarSerie(item.id!, 'Movie')">
+      <li
+        *ngFor="let item of savedMovie; let i = index"
+        (click)="redireccionarSerie(item.id!, 'Movie')"
+      >
         <img
           [src]="image + item.poster_path || no_image"
           alt="{{ item.title }}"
           class="saved-content-image"
         />
         <span>{{ item.title }}</span>
-        <button class="delete" (click)="removeSavedItem(i, 'savedItems')">Eliminar</button>
+        <button class="delete" (click)="removeSavedItem(i, 'savedItems')">
+          Eliminar
+        </button>
+        <button
+          class="watched"
+          (click)="watched(item.poster_path!, item.title!, item.id!)"
+          (click)="removeSavedItem(i, 'savedItems')"
+        >
+          Visto
+        </button>
       </li>
     </ul>
   </div>
@@ -25,15 +37,47 @@
   <div class="saved-content">
     <h3>Series Guardadas</h3>
     <ul>
-      <li *ngFor="let item of savedSerie, let i = index" (click)="redireccionarSerie(item.id!, 'Tv')">
+      <li
+        *ngFor="let item of savedSerie; let i = index"
+        (click)="redireccionarSerie(item.id!, 'Tv')"
+      >
         <img
           [src]="image + item.poster_path || no_image"
           alt="{{ item.title }}"
           class="saved-content-image"
         />
         <span>{{ item.title }}</span>
-        <button class="delete" (click)="removeSavedItem(i, 'savedSerie')">Eliminar</button>
+        <button class="delete" (click)="removeSavedItem(i, 'savedSerie')">
+          Eliminar
+        </button>
+        <button
+          class="watched"
+          (click)="watched(item.poster_path!, item.title!, item.id!)"
+          (click)="removeSavedItem(i, 'savedSerie')"
+        >
+          Visto
+        </button>
       </li>
     </ul>
   </div>
+
+  <div class="saved-content">
+    <h3>Vistos</h3>
+    <ul>
+      <li
+        *ngFor="let item of watchedList; let i = index"
+      >
+        <img
+          [src]="image + item.poster_path || no_image"
+          alt="{{ item.title }}"
+          class="saved-content-image"
+        />
+        <span>{{ item.title }}</span>
+        <button class="delete" (click)="removeSavedItem(i, 'watched')">
+          Eliminar
+        </button>
+      </li>
+    </ul>
+  </div>
+
 </div>

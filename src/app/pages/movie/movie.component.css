@@ -49,6 +49,7 @@ h4{
 @media (max-width: 768px) {
     .conteiner__card {
       grid-template-columns: 1fr; /* Cambia a una sola columna */
+      margin-left: 2rem;
     }
   
     .card {
@@ -68,6 +69,7 @@ h4{
   @media (min-width: 769px) and (max-width: 1024px) {
     .conteiner__card {
       grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+      margin-left: 2rem;
     }
   
     img {

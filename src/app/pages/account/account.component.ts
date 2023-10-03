@@ -13,6 +13,7 @@ export class AccountComponent {
   public image: string = enviroment.imageUrl;
   public no_image: string = '../../../assets/no_image.png'
   public user: string = '';
+  public watchedList: any[] = [];
   
   private router = inject(Router);
 
@@ -20,6 +21,7 @@ export class AccountComponent {
   ngOnInit(): void {
     this.savedSerie = this.getSavedItems('savedSerie');
     this.savedMovie = this.getSavedItems('savedItems');
+    this.watchedList = this.getSavedItems('watched');
     this.user = localStorage.getItem('user')?.toString() || '';
   }
 
@@ -36,9 +38,18 @@ export class AccountComponent {
 
     this.savedSerie = this.getSavedItems('savedSerie');
     this.savedMovie = this.getSavedItems('savedItems');
+    this.watchedList = this.getSavedItems('watched');
   }
+
 
   redireccionarSerie(id: number, path:string) {
     this.router.navigate([`/pages/${path}/`, id]); 
   }
+
+
+  watched(poster_path: string, title: string, id:any){
+    this.watchedList = JSON.parse(localStorage.getItem('watched') || '[]');
+    this.watchedList.push({ poster_path: poster_path, title: title, id:id });
+    localStorage.setItem('watched', JSON.stringify(this.watchedList));
+   }
 }
